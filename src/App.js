@@ -34,7 +34,7 @@ function App() {
     data[`category_${category}`] = 1;
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/predict", {
+      const res = await fetch("https://sales-backend-dil3.onrender.com/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
