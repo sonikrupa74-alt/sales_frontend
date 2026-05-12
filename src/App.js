@@ -7,6 +7,9 @@ function App() {
   const [category, setCategory] = useState("Clothing");
   const [result, setResult] = useState("");
 
+  // ✅ Use environment variable
+  const API = process.env.REACT_APP_API_URL;
+
   const getIcon = (category) => {
     switch (category) {
       case "Clothing": return "👕";
@@ -34,7 +37,7 @@ function App() {
     data[`category_${category}`] = 1;
 
     try {
-      const res = await fetch("https://sales-backend-dil3.onrender.com/predict", {
+      const res = await fetch(`${API}/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,10 +45,11 @@ function App() {
         body: JSON.stringify(data),
       });
 
-      const result = await res.json();
-      setResult(result.PredictedSales);
+      const response = await res.json();
+      setResult(response.PredictedSales);
     } catch (err) {
       console.error(err);
+      alert("Error connecting to server");
     }
   };
 
