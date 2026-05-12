@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: system-ui;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: #f1f5f9;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  display: flex;
+  width: 750px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
-@keyframes App-logo-spin {
+.left {
+  width: 50%;
+  padding: 30px;
+  background: #f8fafc;
+}
+
+.right {
+  width: 50%;
+  padding: 30px;
+}
+
+.badge {
+  font-size: 12px;
+  background: #e2e8f0;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.title {
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.desc {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.categoryBox {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.icon {
+  font-size: 30px;
+  transition: transform 0.3s ease;
+}
+
+.categoryBox:hover .icon {
+  transform: scale(1.2);
+}
+
+.smallText {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input:focus {
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.resultBox {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #e2e8f0;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
